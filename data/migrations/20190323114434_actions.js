@@ -9,7 +9,7 @@ exports.up = function (knex, Promise) {
           .string('notes')
       tbl
           .boolean('Completed')
-          .defaultTo(0);
+          .defaultTo(0)
       tbl
           .integer('project_id')
           .unsigned()
@@ -18,7 +18,7 @@ exports.up = function (knex, Promise) {
           .notNullable()
   })
 }
-
+// undo changes in up func.
 exports.down = function (knex, Promise) {
   return knex.schema.dropTableIfExists('actions')
 }
